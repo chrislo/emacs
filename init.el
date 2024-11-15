@@ -295,6 +295,17 @@
   (jtsx-enable-all-syntax-highlighting-features t)
   )
 
+;; gptel
+(use-package gptel
+  :commands (gptel gptel-send)
+  :bind (("C-c C-<return>" . gptel-menu)
+         ("C-c <return>" . gptel-send))
+  :config
+  (setq gptel-backend (gptel-make-anthropic "Claude"
+    :stream t
+    :key (auth-source-pick-first-password :host "api.anthropic.com")
+  )))
+
 ;; My functions
 (defun my/find-logseq-daily-file ()
   "Find logseq daily file."
