@@ -1,4 +1,4 @@
-(setq user-emacs-directory "~/emacs_d/")
+(setq user-emacs-directory "~/.emacs.d/")
 (setq default-directory "~/")
 
 ;; Use UTF-8 everywhere
