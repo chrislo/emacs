@@ -10,8 +10,7 @@ JavaScript these days.
 ** Assumptions
 
 - I use [[https://github.com/d12frosted/homebrew-emacs-plus][Emacs+ 29]] compiled with treesitter mode
-- I've installed the ~ruby-ts-mode~ and ~jtsx-jsx-mode~ using ~M-x
-  treesit-install-language-grammar~
+- I've installed the ~ruby-ts-mode~ and ~jtsx-jsx-mode~ using ~M-x treesit-install-language-grammar~
 - I work on MacOS (at the time of writing v14)
 
 ** Inspiration
