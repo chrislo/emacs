@@ -335,6 +335,7 @@
   (interactive)
   (if window-system
   (progn
+    (setq initial-frame-alist '((top . 100) (left . 100)))
     ;; use 120 char wide window for largeish displays
     ;; and smaller 80 column windows for smaller displays
     ;; pick whatever numbers make sense for you
