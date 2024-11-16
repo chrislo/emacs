@@ -1,0 +1,28 @@
+* My emacs config
+
+I've been an emacs user for nearly 25 years. Every so often I build a
+new config from scratch, clear out some cruft and try a few new
+packages or approaches.
+
+This config reflects the fact that I mostly write code in Ruby and
+JavaScript these days.
+
+** Assumptions
+
+- I use [[https://github.com/d12frosted/homebrew-emacs-plus][Emacs+ 29]] compiled with treesitter mode
+- I've installed the ~ruby-ts-mode~ and ~jtsx-jsx-mode~ using ~M-x
+  treesit-install-language-grammar~
+- I work on MacOS (at the time of writing v14)
+
+** Inspiration
+
+I love reading other people's configurations. This config is inspired
+in particular by
+
+- https://github.com/SophieBosio/.emacs.d
+- https://github.com/larstvei/dot-emacs
+- https://github.com/karthink/.emacs.d
+
+but it also contains various snippets I've collected over the years
+that either I've cobbled together, or I've borrowed from places
+forgotten. Thank you to anyone who's ever shared their ~.emacs~!
