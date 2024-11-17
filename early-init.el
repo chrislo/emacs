@@ -38,5 +38,3 @@
 ;; For LSP mode, use plists for deserialization
 ;; For more info, see https://emacs-lsp.github.io/lsp-mode/page/performance/#use-plists-for-deserialization
 (setenv "LSP_USE_PLISTS" "true")
-
-(when window-system (set-frame-size (selected-frame) 80 24))
