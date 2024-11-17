@@ -12,8 +12,8 @@
 ;; Prevent the glimpse of un-styled Emacs by disabling these UI elements early.
 (setq default-frame-alist
       '((vertical-scroll-bars . nil)
-	(menu-bar-lines . 0)
-	(tool-bar-lines . 0)))
+        (menu-bar-lines . 0)
+        (tool-bar-lines . 0)))
 
 ;; Resizing the Emacs frame can be a terribly expensive part of changing the
 ;; font. By inhibiting this, we easily halve startup times with fonts that are
@@ -32,8 +32,8 @@
 (defvar file-name-handler-alist-old file-name-handler-alist)
 (setq file-name-handler-alist nil)
 (add-hook 'emacs-startup-hook
-	  (lambda ()
-	    (setq file-name-handler-alist file-name-handler-alist-old)))
+          (lambda ()
+            (setq file-name-handler-alist file-name-handler-alist-old)))
 
 ;; For LSP mode, use plists for deserialization
 ;; For more info, see https://emacs-lsp.github.io/lsp-mode/page/performance/#use-plists-for-deserialization
