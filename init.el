@@ -113,6 +113,9 @@
 ;; Typography / font settings
 (set-frame-font "Roboto Mono 20" nil t)
 
+;; Encryption
+(setq epg-gpg-program "gpg2")
+
 ;; I prefer a light theme, but if I use a dark theme it's
 ;; modus-vivendi
 (use-package emacs
