@@ -133,11 +133,16 @@
 (setq recentf-max-saved-items 50)
 
 ;; Vertico
+;; Display minibuffer candidates vertically, and immediately.
 (use-package vertico
   :init
   (vertico-mode))
 
-;; Configure directory extension.
+;; Configure vertico-directory extension.
+;; It's awkward to work with files and paths in the minibuffer
+;; character-by-character. This package (which comes with vertico, but
+;; is not enabled by default) makes it quicker to delete
+;; subdirectories etc.
 (use-package vertico-directory
   :after vertico
   :ensure nil
@@ -150,6 +155,7 @@
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 ;; Consult
+;; Show previews of search candidates.
 (use-package consult
   :bind (("C-c r" . consult-ripgrep)
          ("C-x b" . consult-buffer) ; orig. switch-to-buffer
@@ -158,6 +164,7 @@
   )
 
 ;; Orderless
+;; More relaxed completion in the minibuffer
 (use-package orderless
   :init
   (setq completion-styles '(orderless basic)
@@ -165,6 +172,7 @@
         completion-category-overrides '((file (styles partial-completion)))))
 
 ;; Marginalia
+;; Display helpful hints next to completion candidates.
 (use-package marginalia
   :bind (("M-A" . marginalia-cycle)
          :map minibuffer-local-map
@@ -173,6 +181,7 @@
   (marginalia-mode))
 
 ;; Which key
+;; Helpful hints when partial key bindings are invoked.
 (use-package which-key
   :diminish which-key-mode
   :config
