@@ -110,6 +110,15 @@
 ;; Tidy-up whitespace everywhere
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
+;; Enable abbreviations in text mode
+;; I use these to expand co-authors initials into Co-authored-by lines in git commit messages.
+;;
+;; In ~/.emacs.d/abbrev_defs I have something like:
+;;   (define-abbrev-table 'text-mode-abbrev-table
+;;    '(("ae" "Co-authored-by: Alice Example <alice@example.com>" nil :count 0)))
+;;
+(add-hook 'text-mode-hook 'abbrev-mode)
+
 ;; Typography / font settings
 (set-frame-font "Roboto Mono 20" nil t)
 
