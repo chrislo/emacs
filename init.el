@@ -230,8 +230,18 @@
 ;; Projects
 (use-package projectile
   :diminish projectile-mode
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
   :config
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (define-key projectile-command-map (kbd "a")
+    (lambda ()
+      (interactive)
+      (let ((buf-name (format "*gptel: %s*" (projectile-project-name))))
+        (if (string= (buffer-name) buf-name)
+            (switch-to-buffer (other-buffer))
+          (if (get-buffer buf-name)
+              (switch-to-buffer buf-name)
+            (gptel buf-name))))))
   (projectile-mode +1)
   )
 
