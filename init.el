@@ -198,7 +198,6 @@
 
 ;; Editorconfig
 (use-package editorconfig
-  :ensure t
   :config
   (editorconfig-mode 1))
 
@@ -312,7 +311,6 @@
 
 ;; treesitter mode for JSX files
 (use-package jtsx
-  :ensure t
   :mode (("\\.jsx?\\'" . jtsx-jsx-mode))
   :commands jtsx-install-treesit-language
   :custom
