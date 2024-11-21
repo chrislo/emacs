@@ -349,6 +349,7 @@
               ("C-c c" . comment-line)
               ("C-c o" . occur)
               ("M-/" . hippie-expand)
+              ("M-." . xref-find-definitions)
               ("C-<help>" . beginning-of-buffer) ;; magicforce keyboard
               ("C-<delete>" . end-of-buffer) ;; magicforce keyboard
               ("<f2>" . dired)
