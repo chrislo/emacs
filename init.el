@@ -189,6 +189,34 @@
   :init
   (marginalia-mode))
 
+;; Autocomplete
+;;
+;; I haven't used autocomplete much before, I've always found it to be
+;; a bit too noisy. But corfu keeps out of the way unless it's
+;; requested by pressing <TAB>. By default it will also complete from
+;; the current TAGS file, and I've added language keyword and filename
+;; completion too. Let's see if I can get used to it.
+(use-package corfu
+  :custom
+  (corfu-cycle t)
+  :init
+  (global-corfu-mode)
+)
+
+(use-package emacs
+  :custom
+  ;; if there are less than 3 candidates, just cycle through them.
+  (completion-cycle-threshold 3)
+  (tab-always-indent 'complete)
+  )
+
+(use-package cape
+  :init
+  (add-hook 'completion-at-point-functions #'cape-keyword)
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-emoji)
+  )
+
 ;; Which key
 ;; Helpful hints when partial key bindings are invoked.
 (use-package which-key
