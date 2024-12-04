@@ -372,11 +372,29 @@
          (dired-mode . dired-omit-mode)
          ))
 
-;; My functions
-(defun my/find-logseq-daily-file ()
-  "Find logseq daily file."
+;; Denote
+(use-package denote
+  :init
+  (require 'denote-journal-extras)
+  (setq denote-directory (expand-file-name "~/denote")
+              denote-infer-keywords t
+              denote-sort-keywords t
+              denote-file-type 'markdown-yaml
+              denote-prompts '(title keywords)
+              denote-journal-extras-directory nil
+              denote-journal-extras-title-format 'day-date-month-year
+              )
+  :config
+  (add-hook 'markdown-mode-hook #'denote-fontify-links-mode-maybe)
+  )
+
+(defun my/toggle-journal ()
+  "Toggle between journal and previous buffer."
   (interactive)
-  (find-file (format-time-string "~/Dropbox/notes/journals/%Y_%m_%d.md")))
+  (if (and (buffer-file-name)
+           (string-match-p denote-journal-extras-keyword (buffer-file-name)))
+      (previous-buffer)
+    (denote-journal-extras-new-or-existing-entry)))
 
 ;; Keybindings
 (use-package emacs
@@ -389,7 +407,7 @@
               ("C-<help>" . beginning-of-buffer) ;; magicforce keyboard
               ("C-<delete>" . end-of-buffer) ;; magicforce keyboard
               ("<f2>" . dired)
-              ("<f9>" . my/find-logseq-daily-file)
+              ("<f9>" . my/toggle-journal)
               ))
 
 (define-minor-mode custom-bindings-mode
