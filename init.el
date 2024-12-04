@@ -364,6 +364,14 @@
   (setq-default gptel-model 'claude-3-5-sonnet-20241022)
   )
 
+;; Dired
+(use-package dired
+  :ensure nil
+  :hook (
+         (dired-mode . dired-hide-details-mode)
+         (dired-mode . dired-omit-mode)
+         ))
+
 ;; My functions
 (defun my/find-logseq-daily-file ()
   "Find logseq daily file."
