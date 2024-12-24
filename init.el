@@ -322,7 +322,8 @@
 
 ;; Install https://github.com/Shopify/ruby-lsp
 (use-package eglot
-  :hook (prog-mode . eglot-ensure)
+  :hook ((ruby-mode . eglot-ensure)
+         (ruby-ts-mode . eglot-ensure))
   :config
   (add-to-list 'eglot-server-programs '((ruby-mode ruby-ts-mode) "ruby-lsp"))
   ;; disable pop-up doc buffers
