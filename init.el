@@ -212,7 +212,6 @@
 
 (use-package cape
   :init
-  (add-hook 'completion-at-point-functions #'cape-keyword)
   (add-hook 'completion-at-point-functions #'cape-file)
   (add-hook 'completion-at-point-functions #'cape-emoji)
   )
@@ -321,9 +320,14 @@
     (ruby-indent-level 2)
     (ruby-indent-tabs-mode nil))
 
-(use-package rbtagger
+;; Install https://github.com/Shopify/ruby-lsp
+(use-package eglot
+  :hook (prog-mode . eglot-ensure)
   :config
-  (add-hook 'ruby-ts-mode (rbtagger-mode)))
+  (add-to-list 'eglot-server-programs '((ruby-mode ruby-ts-mode) "ruby-lsp"))
+  ;; disable pop-up doc buffers
+  (setq eglot-managed-mode-hook (list (lambda () (eldoc-mode -1))))
+  )
 
 ;; Working with React / JSX code
 
