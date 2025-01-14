@@ -14,6 +14,7 @@
               (concat "bundle exec htmlbeautifier -b1 " buffer-file-name)))
            nil t)
      (eval prettier-mode t)))
+ '(sclang-indent-level 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

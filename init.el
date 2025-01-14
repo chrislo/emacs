@@ -381,6 +381,11 @@
       (concat dired-omit-files "\\|^.DS_STORE$")))
   )
 
+;; Supercollider
+;; Install Quark following instructions at https://github.com/supercollider/scel
+(add-to-list 'load-path "/Users/chris/Library/Application Support/SuperCollider/downloaded-quarks/scel/el")
+(require 'sclang)
+(setq exec-path (append exec-path '("/Applications/SuperCollider.app/Contents/MacOS/")))
 
 ;; Denote
 (use-package denote
