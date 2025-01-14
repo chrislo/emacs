@@ -374,7 +374,13 @@
   :hook (
          (dired-mode . dired-hide-details-mode)
          (dired-mode . dired-omit-mode)
-         ))
+         )
+  :config
+  (progn
+    (setq dired-omit-files
+      (concat dired-omit-files "\\|^.DS_STORE$")))
+  )
+
 
 ;; Denote
 (use-package denote
