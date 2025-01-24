@@ -371,14 +371,15 @@
 ;; Dired
 (use-package dired
   :ensure nil
-  :hook (
-         (dired-mode . dired-hide-details-mode)
-         (dired-mode . dired-omit-mode)
-         )
+  :hook (dired-mode . dired-hide-details-mode)
   :config
-  (progn
-    (setq dired-omit-files
-      (concat dired-omit-files "\\|^.DS_STORE$")))
+  (use-package dired-x
+    :ensure nil
+    :demand
+    :config
+    (setq dired-omit-files (concat dired-omit-files "\\|^.DS_STORE$"))
+    :hook
+    (dired-mode . dired-omit-mode))
   )
 
 ;; Supercollider
