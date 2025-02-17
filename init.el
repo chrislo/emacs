@@ -396,7 +396,7 @@
   (setq denote-directory (expand-file-name "~/denote")
               denote-infer-keywords t
               denote-sort-keywords t
-              denote-file-type 'markdown-yaml
+              denote-file-type 'org
               denote-prompts '(title keywords)
               denote-journal-extras-directory nil
               denote-journal-extras-title-format 'day-date-month-year
