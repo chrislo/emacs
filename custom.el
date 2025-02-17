@@ -6,7 +6,7 @@
  '(custom-safe-themes
    '("7c28419e963b04bf7ad14f3d8f6655c078de75e4944843ef9522dbecfcd8717d" default))
  '(package-selected-packages
-   '(prettier editorconfig denote cape corfu gptel rbtagger jtsx markdown-mode which-key marginalia orderless vertico-directory vertico consult vterm projectile diff-hl magit doom-themes exec-path-from-shell))
+   '(lorem-ipsum prettier editorconfig denote cape corfu gptel rbtagger jtsx markdown-mode which-key marginalia orderless vertico-directory vertico consult vterm projectile diff-hl magit doom-themes exec-path-from-shell))
  '(safe-local-variable-values
    '((eval add-hook 'after-save-hook
            (lambda nil

@@ -91,6 +91,7 @@
 (use-package virtual-auto-fill)
 (use-package hledger-mode)
 (use-package ripgrep)
+(use-package lorem-ipsum)
 
 ;; https://github.com/larstvei/dot-emacs?tab=readme-ov-file#key-bindings
 (defvar custom-bindings-map (make-keymap)
