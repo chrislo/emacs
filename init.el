@@ -414,6 +414,10 @@
     (denote-journal-extras-new-or-existing-entry)))
 
 ;; Keybindings
+(global-set-key (kbd "<pinch>") 'ignore)
+(global-set-key (kbd "<C-wheel-up>") 'ignore)
+(global-set-key (kbd "<C-wheel-down>") 'ignore)
+
 (use-package emacs
   :bind (:map custom-bindings-map
               ("C-;" . backward-kill-word)
