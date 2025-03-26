@@ -3,6 +3,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(css-indent-offset 2)
  '(custom-safe-themes
    '("7c28419e963b04bf7ad14f3d8f6655c078de75e4944843ef9522dbecfcd8717d" default))
  '(package-selected-packages
