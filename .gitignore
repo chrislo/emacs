@@ -8,3 +8,5 @@
 /tree-sitter/
 /abbrev_defs
 /projectile.cache
+/eln-cache/
+/tramp
