@@ -59,6 +59,9 @@
 
 (pixel-scroll-precision-mode)
 
+;; Only look in one place for authinfo
+(setq auth-sources '("~/.authinfo.gpg"))
+
 ;; Set up package management. I like the use-package macro (which is
 ;; part of emacs 29) and am trying to use regular package archives
 ;; rather than something like straight / elpaca.
