@@ -20,3 +20,11 @@ category: link
     (find-file filename)
     (insert content)
     (goto-char (point-max))))
+
+(defun my/toggle-journal ()
+  "Toggle between journal and previous buffer."
+  (interactive)
+  (if (and (buffer-file-name)
+           (string-match-p denote-journal-extras-keyword (buffer-file-name)))
+      (previous-buffer)
+    (denote-journal-extras-new-or-existing-entry)))

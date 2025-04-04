@@ -413,14 +413,6 @@
   (add-hook 'markdown-mode-hook #'denote-fontify-links-mode-maybe)
   )
 
-(defun my/toggle-journal ()
-  "Toggle between journal and previous buffer."
-  (interactive)
-  (if (and (buffer-file-name)
-           (string-match-p denote-journal-extras-keyword (buffer-file-name)))
-      (previous-buffer)
-    (denote-journal-extras-new-or-existing-entry)))
-
 ;; Keybindings
 (global-set-key (kbd "<pinch>") 'ignore)
 (global-set-key (kbd "<C-wheel-up>") 'ignore)
