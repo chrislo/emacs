@@ -96,6 +96,8 @@
 (use-package ripgrep)
 (use-package lorem-ipsum)
 
+(load-file (concat user-emacs-directory "my.el"))
+
 ;; https://github.com/larstvei/dot-emacs?tab=readme-ov-file#key-bindings
 (defvar custom-bindings-map (make-keymap)
   "A keymap for custom bindings.")
