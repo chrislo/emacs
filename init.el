@@ -251,6 +251,9 @@
          (magit-post-refresh . diff-hl-magit-post-refresh))
   :bind (:map custom-bindings-map ("<f10>" . magit-status)))
 
+(use-package forge
+  :after magit)
+
 ;; Highlight uncommitted changes
 (use-package diff-hl
   :config
