@@ -16,7 +16,11 @@ title: %s
 url: %s
 published: true
 category: link
----" title url)))
+---
+
+[{{ page.title }}]({{ page.url }})
+
+" title url)))
     (find-file filename)
     (insert content)
     (goto-char (point-max))))
