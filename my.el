@@ -13,12 +13,12 @@
          (content (format "---
 layout: post
 title: %s
-url: %s
+link: %s
 published: true
 category: link
 ---
 
-[{{ page.title }}]({{ page.url }})
+[{{ page.title }}]({{ page.link }})
 
 " title url)))
     (find-file filename)
