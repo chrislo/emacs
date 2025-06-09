@@ -142,6 +142,8 @@
   :init
   (spacious-padding-mode 1))
 
+;; Encryption
+(setq epg-gpg-program "gpg2")
 
 ;; Save history in minibuffers between sessions
 (use-package savehist
