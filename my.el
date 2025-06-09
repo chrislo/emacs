@@ -29,9 +29,9 @@ category: link
   "Toggle between journal and previous buffer."
   (interactive)
   (if (and (buffer-file-name)
-           (string-match-p denote-journal-extras-keyword (buffer-file-name)))
+           (string-match-p denote-journal-keyword (buffer-file-name)))
       (previous-buffer)
-    (denote-journal-extras-new-or-existing-entry)))
+    (denote-journal-new-or-existing-entry)))
 
 (defun my/toggle-todo ()
   "Toggle between todo.org and previous buffer."

@@ -398,21 +398,32 @@
 (require 'sclang)
 (setq exec-path (append exec-path '("/Applications/SuperCollider.app/Contents/MacOS/")))
 
+
 ;; Denote
 (use-package denote
-  :init
-  (require 'denote-journal-extras)
-  (setq denote-directory (expand-file-name "~/denote")
-              denote-infer-keywords t
-              denote-sort-keywords t
-              denote-file-type 'org
-              denote-prompts '(title keywords)
-              denote-journal-extras-directory nil
-              denote-journal-extras-title-format 'day-date-month-year
-              )
+  :ensure t
+  :hook (dired-mode . denote-dired-mode)
+  :bind
+  (("C-c n n" . denote)
+   ("C-c n r" . denote-rename-file)
+   ("C-c n l" . denote-link)
+   ("C-c n b" . denote-backlinks)
+   ("C-c n d" . denote-dired)
+   ("C-c n g" . denote-grep))
   :config
-  (add-hook 'markdown-mode-hook #'denote-fontify-links-mode-maybe)
-  )
+  (setq denote-directory (expand-file-name "~/org/notes/"))
+  (denote-rename-buffer-mode 1))
+
+(use-package denote-journal
+  :ensure t
+  :commands ( denote-journal-new-entry
+              denote-journal-new-or-existing-entry
+              denote-journal-link-or-create-entry )
+  :hook (calendar-mode . denote-journal-calendar-mode)
+  :config
+  (setq denote-journal-directory nil)
+  (setq denote-journal-keyword "journal")
+  (setq denote-journal-title-format 'day-date-month-year))
 
 ;; Keybindings
 (global-set-key (kbd "<pinch>") 'ignore)
