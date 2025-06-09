@@ -32,3 +32,11 @@ category: link
            (string-match-p denote-journal-extras-keyword (buffer-file-name)))
       (previous-buffer)
     (denote-journal-extras-new-or-existing-entry)))
+
+(defun my/toggle-todo ()
+  "Toggle between todo.org and previous buffer."
+  (interactive)
+  (let ((todo-file "~/org/todo.org"))
+    (if (string= (buffer-file-name) (expand-file-name todo-file))
+        (switch-to-buffer (other-buffer))
+      (find-file todo-file))))

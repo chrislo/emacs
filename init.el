@@ -430,6 +430,7 @@
               ("C-<delete>" . end-of-buffer) ;; magicforce keyboard
               ("<f2>" . dired)
               ("<f9>" . my/toggle-journal)
+              ("M-<f9>" . my/toggle-todo)
               ))
 
 (define-minor-mode custom-bindings-mode
