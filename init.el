@@ -138,6 +138,10 @@
   :config
   (load-theme 'ef-dream))
 
+(use-package spacious-padding
+  :init
+  (spacious-padding-mode 1))
+
 
 ;; Save history in minibuffers between sessions
 (use-package savehist
