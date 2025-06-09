@@ -125,10 +125,14 @@
 (add-hook 'text-mode-hook 'abbrev-mode)
 
 ;; Typography / font settings
-(set-frame-font "Roboto Mono 20" nil t)
+(defun my/set-face-font (face family)
+  (set-face-attribute
+   face nil
+   :family family :weight 'regular :width 'expanded :height 200))
 
-;; Encryption
-(setq epg-gpg-program "gpg2")
+(my/set-face-font 'default "Iosevka")
+(my/set-face-font 'fixed-pitch "Iosevka")
+(my/set-face-font 'variable-pitch "Iosevka Aile")
 
 ;; I prefer a light theme, but if I use a dark theme it's
 ;; modus-vivendi
