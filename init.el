@@ -134,11 +134,10 @@
 (my/set-face-font 'fixed-pitch "Iosevka")
 (my/set-face-font 'variable-pitch "Iosevka Aile")
 
-;; I prefer a light theme, but if I use a dark theme it's
-;; modus-vivendi
-(use-package emacs
+(use-package ef-themes
   :config
-  (load-theme 'modus-operandi))
+  (load-theme 'ef-dream))
+
 
 ;; Save history in minibuffers between sessions
 (use-package savehist
