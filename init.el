@@ -130,8 +130,8 @@
    face nil
    :family family :weight 'regular :width 'expanded :height 200))
 
-(my/set-face-font 'default "Iosevka")
-(my/set-face-font 'fixed-pitch "Iosevka")
+(my/set-face-font 'default "Iosevka Curly")
+(my/set-face-font 'fixed-pitch "Iosevka Curly")
 (my/set-face-font 'variable-pitch "Iosevka Aile")
 
 (use-package ef-themes
