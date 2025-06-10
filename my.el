@@ -40,3 +40,12 @@ category: link
     (if (string= (buffer-file-name) (expand-file-name todo-file))
         (switch-to-buffer (other-buffer))
       (find-file todo-file))))
+
+(defun my/cycle-font-height ()
+  "Cycle through font heights"
+  (interactive)
+  (let* ((heights '(200 240 280))
+         (current-height (face-attribute 'default :height))
+         (next-height (or (cadr (member current-height heights))
+                         (car heights))))
+    (set-face-attribute 'default nil :height next-height)))

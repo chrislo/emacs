@@ -442,6 +442,7 @@
               ("<f2>" . dired)
               ("<f9>" . my/toggle-journal)
               ("M-<f9>" . my/toggle-todo)
+              ("<f12>" . my/cycle-font-height)
               ))
 
 (define-minor-mode custom-bindings-mode
