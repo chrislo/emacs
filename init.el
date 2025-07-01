@@ -375,6 +375,9 @@
   (setq gptel-backend (gptel-make-anthropic "Claude"
     :stream t
     :key (auth-source-pick-first-password :host "api.anthropic.com")))
+  (setq  gptel-backend (gptel-make-gemini "Gemini"
+                   :stream t
+                   :key (auth-source-pick-first-password :host "generativelanguage.googleapis.com")))
   (setq-default gptel-model 'claude-3-5-sonnet-20241022)
   )
 
