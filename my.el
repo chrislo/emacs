@@ -16,6 +16,7 @@ title: %s
 link: %s
 published: true
 category: link
+description:
 ---
 
 [{{ page.title }}]({{ page.link }})
