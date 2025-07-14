@@ -29,10 +29,9 @@ description:
 (defun my/toggle-journal ()
   "Toggle between journal and previous buffer."
   (interactive)
-  (if (and (buffer-file-name)
-           (string-match-p denote-journal-keyword (buffer-file-name)))
+  (if (org-journal-is-journal)
       (previous-buffer)
-    (denote-journal-new-or-existing-entry)))
+    (org-journal-new-entry nil)))
 
 (defun my/toggle-todo ()
   "Toggle between todo.org and previous buffer."
