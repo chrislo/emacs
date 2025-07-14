@@ -326,9 +326,14 @@
     :mode "Rakefile\\'"
     :mode "Gemfile\\'"
     :hook (ruby-ts-mode . subword-mode)
+    :hook (ruby-ts-mode . flycheck-mode)
+    :config
+    (flymake-mode nil)
     :custom
     (ruby-indent-level 2)
     (ruby-indent-tabs-mode nil))
+
+(use-package flycheck)
 
 ;; Install https://github.com/Shopify/ruby-lsp
 (use-package eglot
