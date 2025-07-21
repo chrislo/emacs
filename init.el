@@ -56,6 +56,9 @@
        (abbreviate-file-name (buffer-file-name))
        "%b"))))
 
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+
 (pixel-scroll-precision-mode)
 
 ;; Only look in one place for authinfo
