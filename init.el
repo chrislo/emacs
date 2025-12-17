@@ -412,12 +412,23 @@
 (require 'sclang)
 (setq exec-path (append exec-path '("/Applications/SuperCollider.app/Contents/MacOS/")))
 
+(use-package org
+  :config
+  (setq org-export-with-toc nil
+        org-export-with-section-numbers nil
+        org-export-with-author nil
+        org-export-with-email nil
+        org-export-with-date nil
+        org-export-with-title nil))
+
 (use-package org-journal
   :config
   (setq org-journal-dir (expand-file-name "~/org/notes"))
   (setq org-journal-file-format "%Y-%m-%d.org")
   (setq org-journal-date-format "%A, %d %B %Y")
   )
+
+(use-package ox-gfm)
 
 ;; Keybindings
 (global-set-key (kbd "<pinch>") 'ignore)
