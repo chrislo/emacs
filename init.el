@@ -145,6 +145,9 @@
   :init
   (spacious-padding-mode 1))
 
+(use-package mise
+  :hook (after-init . global-mise-mode))
+
 ;; Encryption
 (setq epg-gpg-program "gpg2")
 
