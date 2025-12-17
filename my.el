@@ -26,6 +26,24 @@ description:
     (insert content)
     (goto-char (point-max))))
 
+(defun my/create-blog-post ()
+  "Create a new blog post"
+  (interactive)
+  (let* ((title (read-string "Title: "))
+         (date (format-time-string "%Y-%m-%d"))
+         (kebab-title (replace-regexp-in-string " " "-" (downcase title)))
+         (filename (concat my-post-directory date "-" kebab-title ".md"))
+         (content (format "---
+layout: post
+title: %s
+published: true
+---
+
+" title)))
+    (find-file filename)
+    (insert content)
+    (goto-char (point-max))))
+
 (defun my/toggle-journal ()
   "Toggle between journal and previous buffer."
   (interactive)
