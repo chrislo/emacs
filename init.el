@@ -444,6 +444,7 @@
               ("M-." . xref-find-definitions)
               ("C-<help>" . beginning-of-buffer) ;; magicforce keyboard
               ("C-<delete>" . end-of-buffer) ;; magicforce keyboard
+              ("C-<insert>" . beginning-of-buffer) ;; magicforce keyboard
               ("<f2>" . dired)
               ("<f9>" . my/toggle-journal)
               ("M-<f9>" . my/toggle-todo)
