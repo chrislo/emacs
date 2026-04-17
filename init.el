@@ -1,6 +1,12 @@
 (setq user-emacs-directory "~/.emacs.d/")
 (setq default-directory "~/")
 
+;; load system specific setting
+(let ((system-file (expand-file-name
+                    (car (reverse (split-string (symbol-name system-type) "/")))
+                    user-emacs-directory)))
+  (load system-file t))
+
 ;; Use UTF-8 everywhere
 (set-language-environment    "UTF-8")
 (setq locale-coding-system   'utf-8)
@@ -37,6 +43,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode -1)
+
 
 (setq inhibit-startup-screen t
       inhibit-startup-message t
@@ -103,12 +110,6 @@
 ;; https://github.com/larstvei/dot-emacs?tab=readme-ov-file#key-bindings
 (defvar custom-bindings-map (make-keymap)
   "A keymap for custom bindings.")
-
-;; MacOS keys
-(setq mac-command-modifier       'meta
-      mac-right-command-modifier 'meta
-      mac-option-modifier        nil
-      mac-right-option-modifier  nil)
 
 ;; Auto-reverting files
 (setq auto-revert-interval 1)
