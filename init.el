@@ -78,19 +78,8 @@
 (require 'use-package)
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
-
-(setq package-archives
-      '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")
-        ("MELPA"        . "https://melpa.org/packages/")
-        ("ORG"          . "https://orgmode.org/elpa/")
-        ("MELPA Stable" . "https://stable.melpa.org/packages/")
-        ("nongnu"       . "https://elpa.nongnu.org/nongnu/"))
-      package-archive-priorities
-      '(("GNU ELPA"     . 20)
-        ("MELPA"        . 15)
-        ("ORG"          . 10)
-        ("MELPA Stable" . 5)
-        ("nongnu"       . 0)))
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 ;; Basic package installations (for things that require no customisation)
