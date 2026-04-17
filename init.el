@@ -374,10 +374,16 @@
   :bind (("C-c C-<return>" . gptel-menu)
          ("C-c <return>" . gptel-send))
   :config
-  (setq gptel-backend (gptel-make-anthropic "Claude"
-    :stream t
-    :key (auth-source-pick-first-password :host "api.anthropic.com")))
-  (setq-default gptel-model 'claude-sonnet-4-5-20250929)
+  (setq gptel-model   'mistralai/devstral-2512
+        gptel-backend
+        (gptel-make-openai "OpenRouter"
+          :host "openrouter.ai"
+          :endpoint "/api/v1/chat/completions"
+          :stream t
+          :key (auth-source-pick-first-password :host "openrouter.ai")
+          :models '(openai/gpt-3.5-turbo
+                    mistralai/devstral-2512
+                    )))
   )
 
 ;; Dired
