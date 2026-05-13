@@ -189,7 +189,8 @@
   :bind (("C-c r" . consult-ripgrep)
          ("C-x b" . consult-buffer) ; orig. switch-to-buffer
          ("M-y" . consult-yank-pop) ; orig. yank-pop
-         ("C-s" . consult-line))
+         ("C-s" . consult-line)
+         ("C-c b". consult-bookmark))
   )
 
 ;; Orderless
