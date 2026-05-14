@@ -122,9 +122,9 @@
 (defun my/set-face-font (face family)
   (set-face-attribute
    face nil
-   :family family :weight 'regular :width 'expanded :height 200))
+   :family family :weight 'regular :width 'expanded :height 190))
 
-(my/set-face-font 'default "Iosevka Curly")
+(my/set-face-font 'default "Jetbrains Mono")
 (my/set-face-font 'fixed-pitch "Iosevka Curly")
 (my/set-face-font 'variable-pitch "Iosevka Aile")
 
