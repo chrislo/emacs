@@ -81,6 +81,7 @@
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+(setopt package-install-upgrade-built-in t)
 
 ;; Basic package installations (for things that require no customisation)
 (use-package diminish)
