@@ -282,15 +282,6 @@
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :config
-  (define-key projectile-command-map (kbd "a")
-    (lambda ()
-      (interactive)
-      (let ((buf-name (format "*gptel: %s*" (projectile-project-name))))
-        (if (string= (buffer-name) buf-name)
-            (switch-to-buffer (other-buffer))
-          (if (get-buffer buf-name)
-              (switch-to-buffer buf-name)
-            (gptel buf-name))))))
   (projectile-mode +1)
   )
 
@@ -383,24 +374,6 @@
   (jtsx-enable-electric-open-newline-between-jsx-element-tags t)
   (jtsx-enable-jsx-element-tags-auto-sync nil)
   (jtsx-enable-all-syntax-highlighting-features t)
-  )
-
-;; gptel
-(use-package gptel
-  :commands (gptel gptel-send)
-  :bind (("C-c C-<return>" . gptel-menu)
-         ("C-c <return>" . gptel-send))
-  :config
-  (setq gptel-model   'mistralai/devstral-2512
-        gptel-backend
-        (gptel-make-openai "OpenRouter"
-          :host "openrouter.ai"
-          :endpoint "/api/v1/chat/completions"
-          :stream t
-          :key (auth-source-pick-first-password :host "openrouter.ai")
-          :models '(openai/gpt-3.5-turbo
-                    mistralai/devstral-2512
-                    )))
   )
 
 ;; Dired
