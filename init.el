@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (setq user-emacs-directory "~/.emacs.d/")
 (setq default-directory "~/")
 

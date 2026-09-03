@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (defcustom my-post-directory "~/src/chrislo/chrislowis.co.uk/_posts/"
   "Directory for blog posts"
   :type 'string)
