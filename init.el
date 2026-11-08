@@ -39,12 +39,12 @@
 
 ;; Spaces, not tabs
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
 
 ;; Visual settings
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode -1)
-
 
 (setq inhibit-startup-screen t
       inhibit-startup-message t
@@ -333,13 +333,9 @@
     :mode "Gemfile\\'"
     :hook (ruby-ts-mode . subword-mode)
     :hook (ruby-ts-mode . flycheck-mode)
-    :config
-    (flymake-mode nil)
     :custom
     (ruby-indent-level 2)
     (ruby-indent-tabs-mode nil))
-
-(use-package flycheck)
 
 ;; Install https://github.com/Shopify/ruby-lsp
 (use-package eglot
@@ -349,6 +345,24 @@
   (add-to-list 'eglot-server-programs '((ruby-mode ruby-ts-mode) "ruby-lsp"))
   ;; disable pop-up doc buffers
   (setq eglot-managed-mode-hook (list (lambda () (eldoc-mode -1))))
+  (global-flycheck-eglot-mode 1)
+  )
+
+;; flycheck
+(use-package flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook #'global-flycheck-annotate-mode)
+
+;; Go
+(use-package go-ts-mode
+  :mode "\\.go\\'"
+  :init
+  (add-hook 'before-save-hook #'eglot-format-buffer)
+  :hook (go-ts-mode . eglot-ensure)
+  :hook (go-ts-mode . subword-mode)
+  :config
+  (setq go-ts-indent-offset 2)
+  (flycheck-mode t)
   )
 
 ;; Working with React / JSX code
