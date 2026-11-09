@@ -1,3 +1,3 @@
 ;; -*- lexical-binding: t; -*-
-(setq x-meta-keysym 'meta
-      x-super-keysym 'super)
+(setq x-meta-keysym 'super
+      x-super-keysym 'meta)
