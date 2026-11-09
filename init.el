@@ -464,3 +464,8 @@
    :family family :weight 'regular :width 'expanded :height 220))
 
 (my/set-face-font 'default "Fira Code")
+
+(use-package exec-path-from-shell
+  :config
+  (when (memq window-system '(mac ns x pgtk))
+    (exec-path-from-shell-initialize)))
