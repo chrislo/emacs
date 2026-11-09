@@ -118,19 +118,10 @@
 ;;
 (add-hook 'text-mode-hook 'abbrev-mode)
 
-;; Typography / font settings
-(defun my/set-face-font (face family)
-  (set-face-attribute
-   face nil
-   :family family :weight 'regular :width 'expanded :height 190))
-
-(my/set-face-font 'default "Jetbrains Mono")
-(my/set-face-font 'fixed-pitch "Iosevka Curly")
-(my/set-face-font 'variable-pitch "Iosevka Aile")
-
-(use-package ef-themes
+(use-package modus-themes
+  :demand t
   :config
-  (load-theme 'ef-dream))
+  (modus-themes-load-theme 'modus-vivendi-tinted))
 
 (use-package spacious-padding
   :init
@@ -466,3 +457,10 @@
   :init-value t
   :keymap custom-bindings-map)
 
+;; Typography / font settings
+(defun my/set-face-font (face family)
+  (set-face-attribute
+   face nil
+   :family family :weight 'regular :width 'expanded :height 220))
+
+(my/set-face-font 'default "Fira Code")
