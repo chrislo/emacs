@@ -90,7 +90,6 @@
 (use-package pdf-tools)
 (use-package lua-mode)
 (use-package rspec-mode)
-(use-package yaml-mode)
 (use-package virtual-auto-fill)
 (use-package hledger-mode)
 (use-package ripgrep)
@@ -428,6 +427,18 @@
   )
 
 (use-package ox-gfm)
+
+;; YAML
+
+(use-package yaml-mode)
+
+(use-package outline-indent
+  :commands outline-indent-minor-mode
+  :config
+  (add-hook 'yaml-mode-hook #'outline-indent-minor-mode)
+  (add-hook 'yaml-ts-mode-hook #'outline-indent-minor-mode)
+  :custom
+  (outline-indent-ellipsis " ▼"))
 
 ;; Keybindings
 (global-set-key (kbd "<pinch>") 'ignore)
